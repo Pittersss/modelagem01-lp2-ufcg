@@ -9,13 +9,13 @@ composes Bordado
 ---
 - bordadosCadastrados: Bordado[10]
 ---
-+ MostrarMenu(): String
-+ SelecionaOpcao(opc: char): void
-+ OpcaoValida(opc: char): boolean
-+ IndexValido(index: int): boolean
-+ CadastrarBordado(id: int, linhas:int, colunas:int): void
-+ AtualizarBordado(id:int, no:String, linha: int, coluna:int): void
-+ ImprimirBordado(id: int): String
++ mostrarMenu(): String
++ selecionaOpcao(opc: char): void
++ opcaoValida(opc: char): boolean
++ indexValido(index: int): boolean
++ cadastrarBordado(id: int, linhas:int, colunas:int): void
++ atualizarBordado(id:int, no:String, linha: int, coluna:int): void
++ imprimirBordado(id: int): String
 ---
 
 Bordado
@@ -23,9 +23,12 @@ Bordado
 - linhas: int
 - colunas: int
 ---
-+ Bordado(id:int, linhas:int, colunas:int)
-+ ToString(linhas: int, colunas: int): String
++ bordado(id:int, linhas:int, colunas:int)
++ toString(linhas: int, colunas: int): String
++ getLinhas(): int
++ getColunas
 ---
+
 
 
 
