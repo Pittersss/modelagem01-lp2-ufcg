@@ -7,22 +7,25 @@ association SistemaBordado
 SistemaBordado
 composes Bordado
 ---
-- bordadosCadastrados: String[]
+- bordadosCadastrados: Bordado[10]
 ---
 + MostrarMenu(): String
 + SelecionaOpcao(opc: char): void
 + OpcaoValida(opc: char): boolean
++ IndexValido(index: int): boolean
++ CadastrarBordado(id: int, linhas:int, colunas:int): void
++ AtualizarBordado(id:int, no:String, linha: int, coluna:int): void
++ ImprimirBordado(id: int): String
 ---
 
 Bordado
 ---
-- id: int
 - linhas: int
 - colunas: int
 ---
 + Bordado(id:int, linhas:int, colunas:int)
++ ToString(linhas: int, colunas: int): String
 ---
-
 
 
 
