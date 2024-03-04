@@ -1,0 +1,28 @@
+Main
+association SistemaBordado
+----
+----
+----
+
+SistemaBordado
+composes Bordado
+---
+- bordadosCadastrados: String[]
+---
++ MostrarMenu(): String
++ SelecionaOpcao(opc: char): void
++ OpcaoValida(opc: char): boolean
+---
+
+Bordado
+---
+- id: int
+- linhas: int
+- colunas: int
+---
++ Bordado(id:int, linhas:int, colunas:int)
+---
+
+
+
+
