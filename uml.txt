@@ -6,29 +6,59 @@ association SistemaBordado
 
 SistemaBordado
 composes Bordado
+composes Verificador
+composes Compra
 ---
 - bordadosCadastrados: Bordado[10]
+- compras: Compra[2]
+- contadorBordados: int
+- verificador: Verificador
+
 ---
 + mostrarMenu(): String
 + selecionaOpcao(opc: char): void
 + opcaoValida(opc: char): boolean
 + indexValido(index: int): boolean
 + cadastrarBordado(id: int, linhas:int, colunas:int): void
-+ atualizarBordado(id:int, no:String, linha: int, coluna:int): void
++ atualizarBordado(id: int, no: char, linha: int, coluna:int): void
 + imprimirBordado(id: int): String
++ listaBordado(id: int): String
++ alterarBordado(id: int, linhas: int, colunas:int): void
++ cadastrarCompra(idsBordados: String): int 
++ imprimirCompra(index: int): void
++ avaliarBordado()
++ expandirArray(): void
 ---
 
 Bordado
 ---
 - linhas: int
 - colunas: int
+- pontos: int
 ---
 + Bordado(id:int, linhas:int, colunas:int)
-+ toString(linhas: int, colunas: int): String
++ toString(): String
 + getLinhas(): int
 + getColunas(): int
++ getPontos(): int
 ---
 
+Verificador 
+--- 
+--- 
++ verificaLinhas(linhas: int): boolean 
++ verificaColunas(colunas: int): boolean 
++ verificaIndex(index: int): boolean
++ verificaTamanho(tam_compras : int): boolean
+---
 
-
+Compra
+---
+- preco: int
+- bordadosComprados: Bordado[]
+---
++ Compra (bordadosComprados: Bordado[])
++ getPreco(): int
++ getBordadosComprados(): Bordado[]
+---
 
