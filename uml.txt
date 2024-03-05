@@ -23,10 +23,10 @@ Bordado
 - linhas: int
 - colunas: int
 ---
-+ bordado(id:int, linhas:int, colunas:int)
++ Bordado(id:int, linhas:int, colunas:int)
 + toString(linhas: int, colunas: int): String
 + getLinhas(): int
-+ getColunas
++ getColunas(): int
 ---
 
 
