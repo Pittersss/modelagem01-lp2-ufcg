@@ -19,8 +19,6 @@ composes Compra
 ---
 + mostrarMenu(): String
 + selecionaOpcao(opc: char): void
-+ opcaoValida(opc: char): boolean
-+ indexValido(index: int): boolean
 + cadastrarBordado(id: int, linhas:int, colunas:int): void
 + atualizarBordado(id: int, no: char, linha: int, coluna:int): void
 + imprimirBordado(id: int): String
@@ -28,10 +26,11 @@ composes Compra
 + alterarBordado(id: int, linhas: int, colunas:int): void
 + cadastrarCompra(idsBordados: String): int 
 + imprimirCompra(index: int): void
-+ avaliarBordado(): void
-+ notaGeralBordado(): String
-+ listarAvaliacoes(): String
-+ expandirArray(): void
++ avaliarBordado(comentario: String, nota:int, indexBordado:int): void
++ notaGeralBordado(index: int): String
++ listarAvaliacoes(index: int): String
++ expandirArrayCompras(): void
++ expandirArrayAvaliacoes(): void
 ---
 
 Bordado
@@ -50,10 +49,12 @@ Bordado
 Verificador 
 --- 
 --- 
-+ verificaLinhas(linhas: int): boolean 
-+ verificaColunas(colunas: int): boolean 
++ verificaOpcao(opc: char): boolean
 + verificaIndex(index: int): boolean
-+ verificaCompras(tam_compras : int): boolean
++ verificaLinhas(linhas: int): boolean
++ verificaColunas(colunas: int): boolean 
++ verificaCompra(compras: Compra[]): boolean
++ verificaAvaliacao(avaliacoes: Avaliacao[]): boolean
 ---
 
 Compra
