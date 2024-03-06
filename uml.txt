@@ -7,9 +7,11 @@ association SistemaBordado
 SistemaBordado
 composes Bordado
 composes Verificador
+composes Avaliacao
 composes Compra
 ---
 - bordadosCadastrados: Bordado[10]
+- avaliacoes: Avaliacao[2]
 - compras: Compra[2]
 - contadorBordados: int
 - verificador: Verificador
@@ -26,7 +28,7 @@ composes Compra
 + alterarBordado(id: int, linhas: int, colunas:int): void
 + cadastrarCompra(idsBordados: String): int 
 + imprimirCompra(index: int): void
-+ avaliarBordado()
++ avaliarBordado(): void
 + expandirArray(): void
 ---
 
@@ -49,7 +51,7 @@ Verificador
 + verificaLinhas(linhas: int): boolean 
 + verificaColunas(colunas: int): boolean 
 + verificaIndex(index: int): boolean
-+ verificaTamanho(tam_compras : int): boolean
++ verificaArray(tam_compras : int): boolean
 ---
 
 Compra
@@ -62,3 +64,11 @@ Compra
 + getBordadosComprados(): Bordado[]
 ---
 
+Avaliacao
+---
+- comentario: String
+- nota: int
+---
++ Avaliacao(comentario: String, nota:int)
++ toString(comentario: String, nota: int): String
+---
