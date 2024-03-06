@@ -29,6 +29,8 @@ composes Compra
 + cadastrarCompra(idsBordados: String): int 
 + imprimirCompra(index: int): void
 + avaliarBordado(): void
++ notaGeralBordado(): String
++ listarAvaliacoes(): String
 + expandirArray(): void
 ---
 
@@ -51,7 +53,7 @@ Verificador
 + verificaLinhas(linhas: int): boolean 
 + verificaColunas(colunas: int): boolean 
 + verificaIndex(index: int): boolean
-+ verificaArray(tam_compras : int): boolean
++ verificaCompras(tam_compras : int): boolean
 ---
 
 Compra
@@ -70,6 +72,9 @@ Avaliacao
 - nota: int
 - indexBordado: int
 ---
-+ Avaliacao(comentario: String, nota:int, indexBordado)
++ Avaliacao(comentario: String, nota:int, indexBordado:int)
 + toString(comentario: String, nota: int): String
++ getIndexBordado(): int
++ getComentario(): String
++ getNota(): int
 ---
