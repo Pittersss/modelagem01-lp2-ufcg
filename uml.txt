@@ -68,7 +68,8 @@ Avaliacao
 ---
 - comentario: String
 - nota: int
+- indexBordado: int
 ---
-+ Avaliacao(comentario: String, nota:int)
++ Avaliacao(comentario: String, nota:int, indexBordado)
 + toString(comentario: String, nota: int): String
 ---
