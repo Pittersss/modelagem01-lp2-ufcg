@@ -31,6 +31,7 @@ composes Compra
 + listarAvaliacoes(index: int): String
 + expandirArrayCompras(): void
 + expandirArrayAvaliacoes(): void
++ getBordadosCadastrados(): Bordado[]
 ---
 
 Bordado
@@ -40,21 +41,25 @@ Bordado
 - pontos: int
 ---
 + Bordado(id:int, linhas:int, colunas:int)
-+ toString(): String
 + getLinhas(): int
 + getColunas(): int
 + getPontos(): int
++ toString(): String
++ hashCode(): int
++ equals(obj: Object): boolean
 ---
 
 Verificador 
 --- 
 --- 
++ Verificador() 
 + verificaOpcao(opc: char): boolean
 + verificaIndex(index: int): boolean
 + verificaLinhas(linhas: int): boolean
 + verificaColunas(colunas: int): boolean 
 + verificaCompra(compras: Compra[]): boolean
 + verificaAvaliacao(avaliacoes: Avaliacao[]): boolean
++ toString(): String
 ---
 
 Compra
@@ -62,9 +67,12 @@ Compra
 - preco: int
 - bordadosComprados: Bordado[]
 ---
-+ Compra (bordadosComprados: Bordado[])
++ Compra (indexBordados: int[])
 + getPreco(): int
 + getBordadosComprados(): Bordado[]
++ toString(): String
++ hashCode(): int
++ equals(obj: Object): boolean
 ---
 
 Avaliacao
@@ -74,8 +82,10 @@ Avaliacao
 - indexBordado: int
 ---
 + Avaliacao(comentario: String, nota:int, indexBordado:int)
-+ toString(comentario: String, nota: int): String
 + getIndexBordado(): int
 + getComentario(): String
 + getNota(): int
++ toString(): String
++ hashCode(): int
++ equals(obj: Object): boolean
 ---
