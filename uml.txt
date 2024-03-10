@@ -2,6 +2,7 @@ Main
 association SistemaBordado
 ----
 ----
++ main(args: String[]): void
 ----
 
 SistemaBordado
@@ -19,19 +20,22 @@ composes Compra
 ---
 + mostrarMenu(): String
 + selecionaOpcao(opc: char): void
-+ cadastrarBordado(id: int, linhas:int, colunas:int): void
++ cadastrarBordado(id: int, linhas: int, colunas: int): void
 + atualizarBordado(id: int, no: char, linha: int, coluna:int): void
 + imprimirBordado(id: int): String
-+ listaBordado(id: int): String
++ listarBordado(id: int): String
 + alterarBordado(id: int, linhas: int, colunas:int): void
 + cadastrarCompra(idsBordados: String): int 
-+ imprimirCompra(index: int): void
++ imprimirCompra(index: int): String
 + avaliarBordado(comentario: String, nota:int, indexBordado:int): void
 + notaGeralBordado(index: int): String
 + listarAvaliacoes(index: int): String
 + expandirArrayCompras(): void
 + expandirArrayAvaliacoes(): void
 + getBordadosCadastrados(): Bordado[]
++ getAvaliacoes(): Avaliacao[]
++ getCompras(): Compra[]
++ getContadorBordados(): int
 ---
 
 Bordado
@@ -39,11 +43,15 @@ Bordado
 - linhas: int
 - colunas: int
 - pontos: int
+- matriz: Str[][]
+- avaliacoes: Avaliacao[]
 ---
 + Bordado(id:int, linhas:int, colunas:int)
 + getLinhas(): int
 + getColunas(): int
 + getPontos(): int
++ getMatriz(): Str[][]
++ getAvaliacoes(): Avaliacao[]
 + toString(): String
 + hashCode(): int
 + equals(obj: Object): boolean
@@ -63,6 +71,7 @@ Verificador
 ---
 
 Compra
+association Bordado
 ---
 - preco: int
 - bordadosComprados: Bordado[]
@@ -76,6 +85,7 @@ Compra
 ---
 
 Avaliacao
+association Bordado
 ---
 - comentario: String
 - nota: int
@@ -89,3 +99,4 @@ Avaliacao
 + hashCode(): int
 + equals(obj: Object): boolean
 ---
+
